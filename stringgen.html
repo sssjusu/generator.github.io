@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generator</title>
+    <link rel="stylesheet" href="stringgen.css">
+</head>
+
+<body>
+	<div id="popup" style="display: none;">
+		<p id="popup-message"></p>
+	</div>
+	<label for="stringLength">Length of generated string:</label><br>
+	<input type="number" id="stringLength" name="stringLength" min="1" max="100" value="20"><br>
+	<label for="generatedString">Generated string:</label><br>
+    <input type="text" id="generatedString" value="" oninput="updateInputWidth(this)">
+    <button onclick="generateRandomString(); console.log(document.getElementById('generatedString').value); savedGeneratedString = document.getElementById('generatedString').value;">Generate</button>
+    <button onclick="save(); console.log('Generated string saved.');">Save</button>
+    <button onclick="loadSavedString(); console.log('Loaded Saved String');">Load Saved</button>
+    <input type="hidden" id="savedGeneratedString" value="">
+</body>
+
+<script src="stringgen.js"></script>
+</html>
